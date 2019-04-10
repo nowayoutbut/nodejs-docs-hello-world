@@ -1,8 +1,9 @@
 const http = require('http');
-
+const host = process.env.HOST;
 const server = http.createServer((request, response) => {
   response.writeHead(200, { "Content-Type": "text/plain" });
-  response.end("Hello World! Azure");
+
+  response.end(`HOST Address:${host}`);
 });
 
 const port = process.env.PORT || 1337;
